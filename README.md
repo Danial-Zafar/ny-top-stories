@@ -3,6 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
 ## Development server
+Configure the `https://github.com/techiediaries/fake-api-jwt-json-server` in order to login
+You can use any `user.json` but if you add a new user you need to stop the API the run it again
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
@@ -10,9 +12,18 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Build in development mode
+Run `npm i` to install the dependencies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng serve` to run the application
+
+Run `npm run doc` to generate doc
+
+## Optional
+In order to pass JWT tokken in every NY API call, do the following steps
+
+Go to `app.module.ts` and uncomment
+For window `win+r` and paste this if you use chrome `hrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`
 
 ## Running unit tests
 
