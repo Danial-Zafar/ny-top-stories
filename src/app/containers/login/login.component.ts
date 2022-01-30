@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 
 import { AppApiUrls } from "src/app/constants/api-url";
+import { LoginModel } from "src/app/models/login.model";
 import { ApiService } from "src/app/service/api.service";
 import { AuthService } from "src/app/service/auth.service";
 
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  submit({value, valid}: {value: any, valid: boolean}){
+  submit({value, valid}: {value: LoginModel, valid: boolean}){
     if(valid){
       let res = null;
       this.apiService.post(AppApiUrls.fakeApi.login,{
