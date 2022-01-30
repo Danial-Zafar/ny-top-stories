@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="text-center">{{item.title}}</h1>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <img *ngIf="item?.multimedia?.length>0 && item?.multimedia[0]?.url" class="card-img-top" [src]="getStoryImageUrl(item.multimedia[0].url)" width="300" height="300" alt="Card image cap">
+      <p class="card-text">{{item.abstract}}</p>
+    </div>
+  </div>
+</div>

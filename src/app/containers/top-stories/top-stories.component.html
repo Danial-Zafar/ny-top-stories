@@ -1,0 +1,61 @@
+<div class="container">
+  
+
+    <button (click) ="logOut()" class="btn btn-primary "> Log out </button>
+
+  <div class="jumbotron">
+    <h1 class="text-center">Top Stories</h1>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-2">
+
+    </div>
+    <div class="col-4">
+      <input class="form-control" 
+      placeholder="Search..."
+      [(ngModel)]="searchTxt" 
+      type="text" 
+      name="searchTxt" 
+      id="searchTxt" 
+      (ngModelChange)="this.searchTxtUpdate.next($event)">
+    </div>
+
+    <div class="col-4">
+      <select class="browser-default custom-select" #mySelect (change)="onOptionsSelected(mySelect.value)">
+        <option value="">Select From Hisory</option>
+        <option  *ngFor="let previousQuery of searchHistory">{{previousQuery}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-lg-4 col-md-2 col-sm-12">
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <label class="btn btn-primary " >
+        <input type="radio"  (click)="selectCategory('world')" name="options" id="option2" value="World"> World
+      </label>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <label class="btn btn-primary" >
+        <input type="radio" (click)="selectCategory('science')" name="options" id="option1" value="Science"> Science
+      </label>
+    </div>
+    
+  </div>
+  
+  <div class="row">
+    <div *ngFor="let item of topStories" class="col-lg-4 col-md-6 col-sm-12 pb-3 mb-3">
+      <div class="card card-primary" style="height: 650px">
+        
+        <img *ngIf="item?.multimedia?.length>0 && item?.multimedia[0]?.url" class="card-img-top" [src]="getStoryImageUrl(item.multimedia[0].url)" width="300" height="300" alt="Card image cap">
+        <div class="card-body">
+          <h5 *ngIf="item.title" class="card-title">{{item.title}}</h5>
+          <p *ngIf="item.abstract" class="card-text">{{item.abstract}}</p>
+          <a (click)="showDetails(item.uri)" class="btn btn-primary">Read more ...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

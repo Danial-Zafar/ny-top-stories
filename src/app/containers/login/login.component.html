@@ -1,0 +1,22 @@
+<div class="container">
+  <h1  class="text-center p-3">Login</h1>
+  <div class="row justify-content-center">
+      <form [formGroup]="user" (ngSubmit)="submit(user)">
+          <div class="pb-3">
+            <input type="text" matInput placeholder="Email" formControlName="email">
+          </div>
+          <div class="pb-3">
+            <input type="password" matInput placeholder="Password" formControlName="password">
+          </div>
+          <div *ngIf="error" class="error pb-3">
+            {{ error }}
+          </div>
+          <div >
+            <button class="btn btn-primary" type="submit" >Login</button>
+          </div>
+        </form>
+      </div>
+      <div class="row justify-content-center p-3">
+        <a class="mr-3"> Click here </a> <h5>if you don't have a account login</h5> 
+      </div>
+</div>
