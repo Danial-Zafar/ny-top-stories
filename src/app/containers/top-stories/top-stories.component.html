@@ -1,7 +1,5 @@
 <div class="container">
-  
-
-    <button (click) ="logOut()" class="btn btn-primary "> Log out </button>
+  <button (click) ="logOut()" class="btn btn-primary "> Log out </button>
 
   <div class="jumbotron">
     <h1 class="text-center">Top Stories</h1>
@@ -45,17 +43,7 @@
     
   </div>
   
-  <div class="row">
-    <div *ngFor="let item of topStories" class="col-lg-4 col-md-6 col-sm-12 pb-3 mb-3">
-      <div class="card card-primary" style="height: 650px">
-        
-        <img *ngIf="item?.multimedia?.length>0 && item?.multimedia[0]?.url" class="card-img-top" [src]="getStoryImageUrl(item.multimedia[0].url)" width="300" height="300" alt="Card image cap">
-        <div class="card-body">
-          <h5 *ngIf="item.title" class="card-title">{{item.title}}</h5>
-          <p *ngIf="item.abstract" class="card-text">{{item.abstract}}</p>
-          <a (click)="showDetails(item.uri)" class="btn btn-primary">Read more ...</a>
-        </div>
-      </div>
-    </div>
+  <div>
+      <app-articles [topStories]="topStories"></app-articles>
   </div>
 </div>

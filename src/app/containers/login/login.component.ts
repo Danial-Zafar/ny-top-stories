@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
 
   submit({value, valid}: {value: any, valid: boolean}){
     if(valid){
-      
       let res = null;
       this.apiService.post(AppApiUrls.fakeApi.login,{
         email: value.email, 
@@ -50,6 +49,10 @@ export class LoginComponent implements OnInit {
         }
       });
     }
+  }
+
+  signUp(){
+    this.router.navigate(['/sign-up']);
   }
 
 }

@@ -87,15 +87,8 @@ export class TopStoriesComponent implements OnInit  {
     this.searchStories(value);
   }
 
-  getStoryImageUrl(url:string){
-    url= url.match(/^(?:[a-z]+:)?\/\//i) === null ?   `http://static01.nyt.com/${url}` :  url;
-
-    return url;
-  }
-
   logOut(){
     this.authService.logOut();
-
     this.router.navigate(['/login']);
   }
 } 

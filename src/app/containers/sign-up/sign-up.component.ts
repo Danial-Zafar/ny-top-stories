@@ -4,18 +4,23 @@ import { Router } from '@angular/router';
 
 import { AppApiUrls } from "src/app/constants/api-url";
 import { ApiService } from "src/app/service/api.service";
+import { AuthService } from "src/app/service/auth.service";
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss']
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss']
 })
 
-export class RegistrationComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   user!: FormGroup;
   error: string='';
 
-  constructor(private fb: FormBuilder, private apiService: ApiService, private router: Router) {}
+  constructor(private fb: FormBuilder, private apiService: ApiService, private router: Router, private authSerive: AuthService) {
+    if(this.authSerive.getToken()) {
+      this.router.navigate(['/topstories']);
+    }
+  }
 
   ngOnInit(): void {
 

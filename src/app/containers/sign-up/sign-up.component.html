@@ -1,19 +1,19 @@
 <div class="container">
-  <h1  class="text-center">Login</h1>
-  <div class="row ustify-content-center">
+  <h1  class="text-center p-3">Sign Up</h1>
+  <div class="row justify-content-center">
       <form [formGroup]="user" (ngSubmit)="submit(user)">
-          <div>
+          <div class="pb-3">
             <input type="text" matInput placeholder="Email" formControlName="email">
           </div>
-          <div>
+          <div class="pb-3">
             <input type="password" matInput placeholder="Password" formControlName="password">
           </div>
-          <div *ngIf="error" class="error">
+          <div *ngIf="error" class="error pb-3">
             {{ error }}
           </div>
           <div >
-            <button class="btn btn-primary" type="submit" >Login</button>
+            <button class="btn btn-primary" type="submit" >Sign up</button>
           </div>
         </form>
-    </div>
+      </div>
 </div>

@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { ArticlesComponent } from './articles/articles.component';
+import { RouterModule } from '@angular/router';;
 
+import { SignUpComponent } from './sign-up.component';
 
-
-const modules:any[] = [
-  ArticlesComponent
+const modules = [
+  SignUpComponent,
   ];
   
   @NgModule({
@@ -15,10 +14,12 @@ const modules:any[] = [
       CommonModule,
       FormsModule,
       ReactiveFormsModule,
+      RouterModule,
     ],
     entryComponents: [],
     providers: [],
     declarations: modules,
     exports: modules
   })
-  export class ComponentModule {}
+  export class SignUpModule {}
+  
