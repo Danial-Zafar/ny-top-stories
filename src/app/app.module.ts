@@ -14,22 +14,20 @@ import { AuthService } from './service/auth.service';
 import { AuthInterceptor } from './service/auth.intercepter';
 import { CommonModule } from '@angular/common';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    StoryDetailsComponent,
-  ],
+  declarations: [AppComponent, StoryDetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ContainersModule,
     HttpClientModule,
-    CommonModule,
-    
+    CommonModule
   ],
-  providers: [ApiService, AuthGuardService, AuthService, 
+  providers: [
+    ApiService,
+    AuthGuardService,
+    AuthService
     /**
      * if you want to add bearer tokken in request header, you need to run chrome in this mode
      * chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
@@ -42,4 +40,4 @@ import { CommonModule } from '@angular/common';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

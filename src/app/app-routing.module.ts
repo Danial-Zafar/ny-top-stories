@@ -7,7 +7,6 @@ import { StoryDetailsComponent } from './containers/story-details/story-details.
 import { TopStoriesComponent } from './containers/top-stories/top-stories.component';
 import { AuthGuardService } from './service/auth.guard.guard';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -24,13 +23,13 @@ const routes: Routes = [
   },
   {
     path: 'topstories',
-    canActivate : [AuthGuardService],
+    canActivate: [AuthGuardService],
     component: TopStoriesComponent
   },
   {
-     path: 'story-details/:id',
-     canActivate : [AuthGuardService],
-     component: StoryDetailsComponent
+    path: 'story-details/:id',
+    canActivate: [AuthGuardService],
+    component: StoryDetailsComponent
   }
 ];
 
@@ -38,4 +37,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

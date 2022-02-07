@@ -10,7 +10,7 @@
     "docs": "compodoc -p ./tsconfig.app.json",
     "compodoc": "compodoc",
     "lint": "npx eslint 'src/app/**/*.{js,jsx,ts,tsx,html,css,scss}' --quiet --fix",
-    "format": "npx prettier 'src/app/**/*.{js,jsx,ts,tsx,html,css,scss}' --write"
+    "format": "npx prettier src/app/**/*.{js,jsx,ts,tsx,html,css,scss} --write"
   },
   "private": true,
   "dependencies": {

@@ -5,6 +5,6 @@ export interface AticalModel {
   multimedia: MultimediaModel[];
 }
 
-interface MultimediaModel{
-  url:string;
+interface MultimediaModel {
+  url: string;
 }
